@@ -33,11 +33,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(child: widgetOptions.elementAt(selectedIndex)),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Pagar',
         backgroundColor: Colors.green,
         onPressed: () {},
         elevation: 4.0,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.attach_money_rounded),
       ),
       bottomNavigationBar: BottomNavigationBar(
         landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
@@ -65,7 +64,11 @@ class _HomePageState extends State<HomePage> {
             ),
             label: 'Carteira',
           ),
-          BottomNavigationBarItem(icon: SizedBox(), label: ''),
+          BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 25,
+              ),
+              label: 'Pagar'),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.notification_add_outlined,
