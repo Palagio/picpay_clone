@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class ListTileWidget extends StatelessWidget {
   final VoidCallback? onPressed;
   final String label;
-  final IconData icon;
+  final String? image;
   const ListTileWidget(
-      {Key? key, this.onPressed, required this.label, required this.icon})
+      {Key? key, this.onPressed, required this.label, this.image})
       : super(key: key);
 
   @override
@@ -24,8 +24,12 @@ class ListTileWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(150),
                     color: const Color(0xFFDCDCDC),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          'https://image.similarpng.com/very-thumbnail/2020/09/3D-gold-coin-euro-clipart-PNG.png'),
+                    ),
                   ),
-                  child: Icon(icon),
                 ),
               ),
             ),

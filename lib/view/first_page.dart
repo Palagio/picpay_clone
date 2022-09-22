@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:picpay_clone/view/widgets/list_options_widget.dart';
 import 'package:picpay_clone/view/widgets/list_tile_widget.dart';
@@ -94,27 +95,27 @@ class FirstPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: const [
                   ListOptionsWidget(
-                    icon: Icons.abc,
+                    icon: Icons.pix,
                     title: 'Pix',
                   ),
                   ListOptionsWidget(
-                    icon: Icons.abc,
+                    icon: Icons.qr_code,
                     title: 'QR\n' 'Code',
                   ),
                   ListOptionsWidget(
-                    icon: Icons.ac_unit,
+                    icon: CupertinoIcons.barcode,
                     title: 'Pagar\n' 'boleto',
                   ),
                   ListOptionsWidget(
-                    icon: Icons.abc,
+                    icon: Icons.credit_card,
                     title: 'PicPay\n' 'Card',
                   ),
                   ListOptionsWidget(
-                    icon: Icons.abc,
+                    icon: Icons.people,
                     title: 'Pagar\n' 'pessoas',
                   ),
                   ListOptionsWidget(
-                    icon: Icons.abc,
+                    icon: Icons.smartphone,
                     title: 'Recarga\n' 'de celular',
                   ),
                   ListOptionsWidget(
@@ -173,16 +174,24 @@ class FirstPage extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: const [
-                        ListTileWidget(label: 'Pagar Pessoas', icon: Icons.abc),
-                        ListTileWidget(label: 'Cripto', icon: Icons.abc),
                         ListTileWidget(
-                            label: 'Fazer Pix\n' 'parcelado', icon: Icons.abc),
+                          label: 'Pagar Pessoas',
+                        ),
                         ListTileWidget(
-                            label: 'Pagar nas \n' 'maquininhas',
-                            icon: Icons.abc),
+                          label: 'Cripto',
+                        ),
                         ListTileWidget(
-                            label: 'Recarga de\n' 'Celular', icon: Icons.abc),
-                        ListTileWidget(label: 'Google Play', icon: Icons.abc),
+                          label: 'Fazer Pix\n' 'parcelado',
+                        ),
+                        ListTileWidget(
+                          label: 'Pagar nas \n' 'maquininhas',
+                        ),
+                        ListTileWidget(
+                          label: 'Recarga de\n' 'Celular',
+                        ),
+                        ListTileWidget(
+                          label: 'Google Play',
+                        ),
                       ],
                     ),
                   )
