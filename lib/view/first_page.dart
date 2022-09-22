@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:picpay_clone/view/widgets/list_options_widget.dart';
 import 'package:picpay_clone/view/widgets/list_tile_widget.dart';
+import 'package:picpay_clone/view/widgets/news_list_widget.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xFF008c4f),
@@ -32,6 +34,7 @@ class FirstPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           children: [
             Stack(
               children: [
@@ -146,7 +149,6 @@ class FirstPage extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -170,12 +172,12 @@ class FirstPage extends StatelessWidget {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: 140,
+                    height: 130,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: const [
                         ListTileWidget(
-                          label: 'Pagar Pessoas',
+                          label: 'Pagar boleto',
                         ),
                         ListTileWidget(
                           label: 'Cripto',
@@ -194,7 +196,71 @@ class FirstPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  Card(
+                    elevation: 3,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          onTap: () {},
+                          leading: const Padding(
+                            padding: EdgeInsets.only(
+                              top: 8.0,
+                              left: 8,
+                              bottom: 8,
+                            ),
+                            child: Icon(Icons.percent_rounded,
+                                color: Colors.green),
+                          ),
+                          title: const Text(
+                            'Seleção especial',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          subtitle: const Text(
+                            'Promoções disponíveis',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.green,
+                            size: 14,
+                          ),
+                          minLeadingWidth: 1,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const NewsListWidget(),
+                  Container(
+                    color: const Color(0xFFDCDCDC),
+                    width: MediaQuery.of(context).size.width,
+                    height: 4,
+                  ),
+                  const NewsListWidget(),
+                  Container(
+                    color: const Color(0xFFDCDCDC),
+                    width: MediaQuery.of(context).size.width,
+                    height: 4,
+                  ),
+                  const NewsListWidget(),
+                  Container(
+                    color: const Color(0xFFDCDCDC),
+                    width: MediaQuery.of(context).size.width,
+                    height: 4,
+                  ),
+                  const NewsListWidget(),
+                  Container(
+                    color: const Color(0xFFDCDCDC),
+                    width: MediaQuery.of(context).size.width,
+                    height: 4,
+                  ),
                 ],
               ),
             ),
