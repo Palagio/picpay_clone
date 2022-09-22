@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:picpay_clone/first_page.dart';
-import 'package:picpay_clone/payments_page.dart';
-import 'package:picpay_clone/shop_page.dart';
-import 'package:picpay_clone/wallet_page.dart';
+import 'package:picpay_clone/view/first_page.dart';
+import 'package:picpay_clone/view/payments_page.dart';
+import 'package:picpay_clone/view/shop_page.dart';
+import 'package:picpay_clone/view/wallet_page.dart';
 
 import 'notifications_page.dart';
 

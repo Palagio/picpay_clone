@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:picpay_clone/list_options_widget.dart';
+import 'package:picpay_clone/view/widgets/list_options_widget.dart';
+import 'package:picpay_clone/view/widgets/list_tile_widget.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -28,119 +29,168 @@ class FirstPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 80,
-                color: const Color(0xFF008c4f),
-              ),
-              const Positioned(
-                left: 20,
-                top: 20,
-                child: Text(
-                  'Saldo Picpay',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 80,
                 ),
-              ),
-              const Positioned(
-                left: 20,
-                top: 40,
-                child: Text(
-                  'R\$ 0,00',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              const Positioned(
-                top: 40,
-                left: 95,
-                child: Icon(
-                  Icons.remove_red_eye_outlined,
-                  color: Colors.white,
-                  size: 26,
-                ),
-              ),
-              Positioned(
-                top: 30,
-                left: MediaQuery.of(context).size.width * 0.65,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      const Color(0xFF0f6e42),
-                    ),
-                    fixedSize: MaterialStateProperty.all(
-                      const Size(150, 28),
+                const Positioned(
+                  left: 20,
+                  top: 20,
+                  child: Text(
+                    'Saldo Picpay',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
                     ),
                   ),
-                  onPressed: () {},
-                  child: const Text('Extrato'),
                 ),
-              )
-            ],
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 80,
-            color: const Color(0xFF008c4f),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const [
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Pix',
+                const Positioned(
+                  left: 20,
+                  top: 40,
+                  child: Text(
+                    'R\$ 0,00',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'QR\n' 'Code',
+                const Positioned(
+                  top: 40,
+                  left: 95,
+                  child: Icon(
+                    Icons.remove_red_eye_outlined,
+                    color: Colors.white,
+                    size: 26,
+                  ),
                 ),
-                ListOptionsWidget(
-                  icon: Icons.ac_unit,
-                  title: 'Pagar\n' 'boleto',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'PicPay\n' 'Card',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Pagar\n' 'pessoas',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Recarga\n' 'de celular',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Cartão\n' 'transporte',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Pagar\n' 'locais',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Cobrar\n' 'pessoas',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Cripto',
-                ),
-                ListOptionsWidget(
-                  icon: Icons.abc,
-                  title: 'Open Finance',
-                ),
+                Positioned(
+                  top: 30,
+                  left: MediaQuery.of(context).size.width * 0.6,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        const Color(0xFF0f6e42),
+                      ),
+                      fixedSize: MaterialStateProperty.all(
+                        const Size(150, 28),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text('Extrato'),
+                  ),
+                )
               ],
             ),
-          ),
-        ],
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Pix',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'QR\n' 'Code',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.ac_unit,
+                    title: 'Pagar\n' 'boleto',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'PicPay\n' 'Card',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Pagar\n' 'pessoas',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Recarga\n' 'de celular',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Cartão\n' 'transporte',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Pagar\n' 'locais',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Cobrar\n' 'pessoas',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Cripto',
+                  ),
+                  ListOptionsWidget(
+                    icon: Icons.abc,
+                    title: 'Open Finance',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.search_rounded),
+                        prefixIconColor: Colors.green,
+                        hintText: 'O que você quer encontrar?',
+                        filled: true,
+                        fillColor: Color(0xFFDCDCDC),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 140,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        ListTileWidget(label: 'Pagar Pessoas', icon: Icons.abc),
+                        ListTileWidget(label: 'Cripto', icon: Icons.abc),
+                        ListTileWidget(
+                            label: 'Fazer Pix\n' 'parcelado', icon: Icons.abc),
+                        ListTileWidget(
+                            label: 'Pagar nas \n' 'maquininhas',
+                            icon: Icons.abc),
+                        ListTileWidget(
+                            label: 'Recarga de\n' 'Celular', icon: Icons.abc),
+                        ListTileWidget(label: 'Google Play', icon: Icons.abc),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
